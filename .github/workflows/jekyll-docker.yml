@@ -18,56 +18,59 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Shop</title>
+    <title>Hạnh Phúc ở đây</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <h1 class="logo">Modern Shop</h1>
+        <h1 class="logo">Phúc  Alo</h1>
         <nav class="nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Cửa Hàng</a></li>
+                <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Liên Hệ</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>Discover the Best Products</h2>
-        <p>Shop the latest and greatest trends with ease.</p>
-        <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+        <h2>MẶT HÀNG TUYỂN CHỌN NHẤT 2024</h2>
+        <p>Mua Ngay Một Mặt Hàng Cho Bản Thân Nào!</p>
+        <button class="cta-button" onclick="scrollToProducts()">Mua Ngay!</button>
     </section>
 
     <!-- Featured Products Section -->
     <section class="products" id="products">
-        <h2 class="section-title">Featured Products</h2>
+        <h2 class="section-title">Mặt Hàng Nổi Bật</h2>
         <div class="product-list">
             <div class="product-item">
-                <img src="https://drive.google.com/uc?export=view&id=15GRDj-5y5919Ml3xyKJ_rA1yj2QOOPjL" alt="Product 1" class="product-image">
-                <h3>Product 1</h3>
-                <p class="product-price">$99.99</p>
-                <button class="buy-button">Buy Now</button>
+                <img src="/IMG_20240925_212443.jpg" alt="Product 1" class="product-image">
+                <h3>Sản Phẩm 1</h3>
+                <hr class="divider">
+                <p class="product-price">376.000.000VNĐ</p>
+                <button class="buy-button" onclick="buyProduct(this)">Mua Ngay!</button>
             </div>
             <div class="product-item">
                 <img src="phuc.jpg" alt="Product 2" class="product-image">
-                <h3>Product 2</h3>
-                <p class="product-price">$199.99</p>
-                <button class="buy-button">Buy Now</button>
+                <h3>Sản Phẩm 2</h3>
+                <hr class="divider">
+                <p class="product-price">478.999.999VNĐ</p>
+                <button class="buy-button" onclick="buyProduct(this)">Mua Ngay!</button>
             </div>
             <div class="product-item">
-                <img src="product3.jpg" alt="Product 3" class="product-image">
-                <h3>Product 3</h3>
-                <p class="product-price">$299.99</p>
-                <button class="buy-button">Buy Now</button>
+                <img src="/IMG_20240925_212840.jpg" alt="Product 3" class="product-image">
+                <h3>Sản Phẩm 3</h3>
+                <hr class="divider">
+                <p class="product-price">111.372.829VNĐ</p></p>
+                <button class="buy-button" onclick="buyProduct(this)">Mua Ngay</button>
             </div>
         </div>
     </section>
@@ -80,6 +83,17 @@ jobs:
     <script>
         function scrollToProducts() {
             document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function buyProduct(button) {
+            // Thêm hiệu ứng nhảy cho nút khi mua
+            button.classList.add('buying-animation');
+
+            // Sau khi hiệu ứng kết thúc, hiển thị thông báo
+            setTimeout(function() {
+                alert("Hiệp Đã Nhanh Tay Hơn Bạn Mất Rồi!");
+                button.classList.remove('buying-animation'); // Loại bỏ lớp hiệu ứng sau khi hoàn thành
+            }, 1000); // Thời gian chờ 1 giây cho hiệu ứng
         }
     </script>
 </body>
