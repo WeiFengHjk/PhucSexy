@@ -135,6 +135,14 @@ body {
     margin: 1rem 0;
 }
 
+/* Divider Line */
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #ff6b6b, transparent); /* Đường cắt ngang */
+    margin: 1rem 0;
+}
+
 /* Buy Button */
 .buy-button {
     padding: 0.8rem 1.5rem;
@@ -147,6 +155,20 @@ body {
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
     box-shadow: 0 5px 15px rgba(255, 99, 99, 0.4);
     margin-top: auto; /* Để nút Buy Now nằm ở dưới cùng */
+}
+
+/* Animation khi nhấn vào nút Buy Now */
+.buying-animation {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .buy-button:hover {
